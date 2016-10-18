@@ -1,0 +1,8 @@
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\bin\Debug\BSP.WindowsAuthentication.dll
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\bin\Debug\BSP.WindowsAuthentication.pdb
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\bin\Debug\Apprenda.API.Extension.dll
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\bin\Debug\Apprenda.Utils.dll
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\bin\Debug\Apprenda.API.Extension.xml
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\obj\Debug\BSP.WindowsAuthentication.csprojResolveAssemblyReference.cache
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\obj\Debug\BSP.WindowsAuthentication.dll
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\obj\Debug\BSP.WindowsAuthentication.pdb
