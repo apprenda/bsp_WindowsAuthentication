@@ -5,3 +5,4 @@ C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentic
 C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\bin\Release\Apprenda.API.Extension.xml
 C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\obj\Release\BSP.WindowsAuthentication.dll
 C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\obj\Release\BSP.WindowsAuthentication.pdb
+C:\Code\bsp_WindowsAuthentication\BSP.WindowsAuthentication\BSP.WindowsAuthentication\obj\Release\BSP.WindowsAuthentication.csprojResolveAssemblyReference.cache
