@@ -52,15 +52,6 @@ namespace BSP.WindowsAuthenticationP
                 
                 XmlNode systemWebServer = xmlDoc.SelectSingleNode("//system.webServer");
 
-                //If there is no custom errors setting defined, add it and save the modifed configuration file
-                /* <security>
-                     <authentication>
-                        <anonymousAuthentication enabled="false" />
-                        <windowsAuthentication enabled="true" />
-                     </authentication>
-                  </security>
-                */
-
                 XmlNode security = xmlDoc.CreateNode(XmlNodeType.Element, "security", null);
                 XmlNode authentication = xmlDoc.CreateNode(XmlNodeType.Element, "authentication", null);
                 XmlNode anonymousAuthentication = xmlDoc.CreateNode(XmlNodeType.Element, "anonymousAuthentication", null);
@@ -75,6 +66,7 @@ namespace BSP.WindowsAuthenticationP
                 authentication.AppendChild(windowsAuthentication);
                 security.AppendChild(authentication);
 
+                //If there is no Windows Authentication, add the section
                 if (null == systemWebServer)
                 {
                     systemWebServer = xmlDoc.CreateNode(XmlNodeType.Element, "system.webServer", null);
@@ -85,7 +77,7 @@ namespace BSP.WindowsAuthenticationP
                     xmlDoc.Save(filePath);
                     return BootstrappingResult.Success();
                 }
-                //If there is a custom errors setting configuration, overwrite it and set it to off
+                //If System.webserver is found, append the security section
                 else if (null != systemWebServer)
                 {
                     systemWebServer.AppendChild(security);

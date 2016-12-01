@@ -32,11 +32,11 @@
   <ItemGroup>
     <Reference Include="Apprenda.API.Extension, Version=6.5.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Apprenda\SDK\API Files\Apprenda.API.Extension.dll</HintPath>
+      <HintPath>..\..\..\lib\Apprenda.API.Extension.dll</HintPath>
     </Reference>
     <Reference Include="Apprenda.Utils, Version=6.5.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Program Files (x86)\Apprenda\SDK\API Files\Apprenda.Utils.dll</HintPath>
+      <HintPath>..\..\..\lib\Apprenda.Utils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
