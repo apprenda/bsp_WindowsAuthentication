@@ -50,16 +50,26 @@ namespace BSP.WindowsAuthenticationP
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(filePath);
                 
+                //Find the System.webserver section
                 XmlNode systemWebServer = xmlDoc.SelectSingleNode("//system.webServer");
 
+                //Create the necessary sections
                 XmlNode security = xmlDoc.CreateNode(XmlNodeType.Element, "security", null);
                 XmlNode authentication = xmlDoc.CreateNode(XmlNodeType.Element, "authentication", null);
                 XmlNode anonymousAuthentication = xmlDoc.CreateNode(XmlNodeType.Element, "anonymousAuthentication", null);
                 XmlNode windowsAuthentication = xmlDoc.CreateNode(XmlNodeType.Element, "windowsAuthentication", null);
+                XmlNode providers = xmlDoc.CreateNode(XmlNodeType.Element, "providers", null);
+                XmlNode ntlmProvider = xmlDoc.CreateNode(XmlNodeType.Element, "add", null);
+
+                //Create the necessary attributes for windows and anonymous authentication
                 XmlAttribute anonymousAuthenticationEnabled = xmlDoc.CreateAttribute("enabled");
                 XmlAttribute windowsAuthenticationEnabled = xmlDoc.CreateAttribute("enabled");
+                XmlAttribute ntlmAuth = xmlDoc.CreateAttribute("value");
                 anonymousAuthenticationEnabled.Value = "false";
                 windowsAuthenticationEnabled.Value = "true";
+                ntlmAuth.Value = "NTLM";
+                
+                //Create the correct tree
                 anonymousAuthentication.Attributes.Append(anonymousAuthenticationEnabled);
                 windowsAuthentication.Attributes.Append(windowsAuthenticationEnabled);
                 authentication.AppendChild(anonymousAuthentication);

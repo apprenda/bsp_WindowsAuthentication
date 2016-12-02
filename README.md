@@ -11,5 +11,5 @@ Bootstrap Policy that enables Windows Authentication for IIS deployed Web Applic
 *NOTE*: This BSP only applies to Windows components of type website
 
 #Additional Notes:
-* The BSP was built and tested using VS 2013 and the 6.5.1 version of the Apprenda SDK and Cloud Platform.
+* The BSP was built and tested using VS 2013 and the 6.5.3 version of the Apprenda SDK and Cloud Platform.
 * A built and packaged version of the BSP is available for download as part of this repository.
