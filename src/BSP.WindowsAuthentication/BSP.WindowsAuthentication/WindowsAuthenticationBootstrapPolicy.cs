@@ -69,9 +69,12 @@ namespace BSP.WindowsAuthenticationP
                 windowsAuthenticationEnabled.Value = "true";
                 ntlmAuth.Value = "NTLM";
                 
-                //Create the correct tree
+                //Create the tree by appending all elements, children and nodes
+                ntlmProvider.Attributes.Append(ntlmAuth);
                 anonymousAuthentication.Attributes.Append(anonymousAuthenticationEnabled);
                 windowsAuthentication.Attributes.Append(windowsAuthenticationEnabled);
+                providers.AppendChild(ntlmProvider);
+                windowsAuthentication.AppendChild(providers);
                 authentication.AppendChild(anonymousAuthentication);
                 authentication.AppendChild(windowsAuthentication);
                 security.AppendChild(authentication);
