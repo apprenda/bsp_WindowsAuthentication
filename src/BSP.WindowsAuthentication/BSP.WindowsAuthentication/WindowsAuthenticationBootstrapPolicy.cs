@@ -46,6 +46,10 @@ namespace BSP.WindowsAuthenticationP
 
             try
             {
+                /*By default, IIS adds the negotiate and NTLM providers as part of windows authentication.
+                 * If you need those sections to explictely be added, uncomment the following section. 
+                 * */
+                
                 //Traverse the web.config file and find the required section
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(filePath);
@@ -58,23 +62,27 @@ namespace BSP.WindowsAuthenticationP
                 XmlNode authentication = xmlDoc.CreateNode(XmlNodeType.Element, "authentication", null);
                 XmlNode anonymousAuthentication = xmlDoc.CreateNode(XmlNodeType.Element, "anonymousAuthentication", null);
                 XmlNode windowsAuthentication = xmlDoc.CreateNode(XmlNodeType.Element, "windowsAuthentication", null);
-                XmlNode providers = xmlDoc.CreateNode(XmlNodeType.Element, "providers", null);
-                XmlNode ntlmProvider = xmlDoc.CreateNode(XmlNodeType.Element, "add", null);
+                /* Providers, uncomment if needed
+                 * XmlNode providers = xmlDoc.CreateNode(XmlNodeType.Element, "providers", null);
+                 * XmlNode ntlmProvider = xmlDoc.CreateNode(XmlNodeType.Element, "add", null);
+                 * */
 
                 //Create the necessary attributes for windows and anonymous authentication
                 XmlAttribute anonymousAuthenticationEnabled = xmlDoc.CreateAttribute("enabled");
                 XmlAttribute windowsAuthenticationEnabled = xmlDoc.CreateAttribute("enabled");
-                XmlAttribute ntlmAuth = xmlDoc.CreateAttribute("value");
                 anonymousAuthenticationEnabled.Value = "false";
                 windowsAuthenticationEnabled.Value = "true";
-                ntlmAuth.Value = "NTLM";
-                
+                /* Providers, uncomment if needed
+                 * XmlAttribute ntlmAuth = xmlDoc.CreateAttribute("value");
+                 * ntlmAuth.Value = "NTLM";
+                 * */
+
                 //Create the tree by appending all elements, children and nodes
-                ntlmProvider.Attributes.Append(ntlmAuth);
+                //ntlmProvider.Attributes.Append(ntlmAuth);
                 anonymousAuthentication.Attributes.Append(anonymousAuthenticationEnabled);
                 windowsAuthentication.Attributes.Append(windowsAuthenticationEnabled);
-                providers.AppendChild(ntlmProvider);
-                windowsAuthentication.AppendChild(providers);
+                //providers.AppendChild(ntlmProvider);
+                //windowsAuthentication.AppendChild(providers);
                 authentication.AppendChild(anonymousAuthentication);
                 authentication.AppendChild(windowsAuthentication);
                 security.AppendChild(authentication);
